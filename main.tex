@@ -1,0 +1,52 @@
+\documentclass{common/nak}
+
+%Deckblattkonfiguration
+%Die Werte in den Klammern können entsprechend angepasst werden
+\def\transferLeistungnnummer{1}
+\def\matrikelNummer{11885}
+\def\themenBeschreibung{Irgendein langweiliger shit der nichts mit Informatik zutun hat}
+\def\studienGang{Wirtschaftsinformatik}
+\def\zenturie{i21c}
+
+%General stuff
+\graphicspath{{images/}}
+\addbibresource{quellen.bib}
+\begin{document}
+
+%Transferlesitungs Seite
+\input{common/transferleistungTitelBlatt}
+\newpage
+
+\inhaltsverzeichnis{}
+\newpage
+\abbildungsverzeichnis{}
+\newpage
+\tabellenverzeichnis{}
+\newpage
+\listingverzeichnis{}
+\newpage
+\abkuerzungsverzeichnis{}
+
+%Seitenzahlen
+\pagenumbering{arabic}
+\newpage
+\setcounter{page}{1}
+%Abbildungscounter sonst bei 2
+\setcounter{figure}{0}
+
+%Sectionen hinzufügen
+\foreach \i in {00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, ...,99} {%
+    \newpage
+    \edef\FileName{sections/file\i}%
+    \IfFileExists{\FileName}{%
+       \input{\FileName}%
+    }
+}
+
+
+%Quellen
+\newpage
+\clearpage
+\quellenverzeichnis
+
+\end{document}

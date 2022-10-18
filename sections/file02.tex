@@ -1,0 +1,53 @@
+\section{Usefull Stuff}
+
+\subsection{Befehle}
+\begin{itemize}
+    \item \anf{anf\{der Text\}} Anführungszeichen vorne und hinten mit Leerzeichen
+    \item \anf{anfo\{der Text\}} Anführungszeichen vorne und hinten ohne Leerzeichen
+    \item \needCite[\anf{\textbackslash needCite[optionaler Text]}] Usefull wenn noch ein Zitat benötigt wird
+    \begin{itemize} 
+        \item Es wird für diese Stelle eine Warnung generiert, damit die Transferleistung nicht aus versehen so abgegeben wird
+    \end{itemize}
+    \item \todo{\anf{\textbackslash todo\{Text\}}} Usefull wenn noch ein Todo offen ist
+    \begin{itemize} 
+        \item Es wird für diese Stelle eine Warnung generiert, damit die Transferleistung nicht aus versehen so abgegeben wird
+    \end{itemize}
+    \item \anf{\textbackslash cite\{Zitat\}} wird benutzt um zu zitieren. Ziatete werden unter quellen.bib abgelegt (\cite{OOPOverview})
+    \item \anf{\textbackslash fullref\{Referenz\}} wird benutzt um eine Referenz komplett darzustellen. Referenz Codebeispiel \fullref{code:sessionFactory}
+\end{itemize}
+
+\newpage
+\subsection{Beispielverwendung eines Codebeispiels}
+\begin{codeBlock}{abap}{Tolle unterschrift}{code:abapshit}
+METHOD get_entities_with_sel_options.
+    DATA: index_of_last_entry TYPE int4.
+    
+    IF iv_top EQ 0.
+        SELECT * FROM zvg_18a_39_books INTO TABLE @return[]
+                WHERE isbn IN @it_sel_isbn
+                    AND author IN @it_sel_author
+                    AND pagenum IN @it_sel_pagenum
+                    AND title IN @it_sel_title
+                ORDER BY isbn ASCENDING , id DESCENDING.
+    ELSE.
+        index_of_last_entry = iv_top + iv_skip.
+        SELECT * FROM zvg_18a_39_books
+            INTO TABLE @return[]
+                UP TO @index_of_last_entry ROWS
+                WHERE isbn IN @it_sel_isbn
+                    AND author IN @it_sel_author
+                    AND pagenum IN @it_sel_pagenum
+                    AND title IN @it_sel_title
+                ORDER BY isbn ASCENDING , id DESCENDING.
+    ENDIF.
+ENDMETHOD.
+\end{codeBlock}
+Es können nun verschiedenen Sprachen als Codeblock dargestellt werden. Es sind vorhanden: js, java, json, abap und xml. Wenn eine andere benötigt wird, kann die in der nak.cls erweitert werden :) Mithilfe der \anf{fullref} Funktion kann auf das Codebeispiel \fullref{code:abapshit} referenziert werden. 
+
+\begin{codeBlock}{java}{Beispielhafte Erstellung einer Sessionfactory.}{code:sessionFactory}
+SessionFactory sessionFactory = new Configuration()
+     .addResource("hibernate.properties")
+     .setProperties(System.getProperties())
+     .buildSessionFactory();
+\end{codeBlock} 
+Das Coole bei diesen Codebeispielen ist, die automatische Markierung im Text. Ebenfalls werden die Cobeblöcke automatisch in der Seite zentriert. Außerdem werden die Codezeilen mit Zeilennummern versehen, um eine einfach Referenzierung zu gewährleisten.
