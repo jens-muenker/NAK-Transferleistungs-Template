@@ -64,6 +64,9 @@
 %Mehrfach Footnote
 \RequirePackage[multiple]{footmisc}
 
+%Abkürzungen
+\RequirePackage{acronym}
+
 
 %%%%%%%%%%%%%%%%%% TABLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{array} % m und b tabellenausrichtungen
