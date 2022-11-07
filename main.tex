@@ -8,6 +8,16 @@
 \def\studienGang{Wirtschaftsinformatik}
 \def\zenturie{i21c}
 
+% PDF-Metadaten setzen
+\hypersetup{
+    pdftitle    = {Schwierigkeiten beim Vergleich von CO2-Fußabdrücken},
+    pdfsubject  = {\themenBeschreibung},
+    pdfauthor   = {Jens Münker},
+    pdfkeywords = {Greenhouse Gas Protocol, Vergleich, CO2-Fußabdruck, Klima} ,
+    pdfcreator  = {},
+    pdfproducer = {}
+}
+
 %General stuff
 \graphicspath{{images/}}
 \addbibresource{quellen.bib}
@@ -17,6 +27,7 @@
 \input{common/transferleistungTitelBlatt}
 \newpage
 
+%Verzeichnisse
 \inhaltsverzeichnis{}
 \newpage
 \abbildungsverzeichnis{}
@@ -26,6 +37,7 @@
 \listingverzeichnis{}
 \newpage
 \abkuerzungsverzeichnis{}
+\newpage
 
 %Seitenzahlen
 \pagenumbering{arabic}
@@ -43,10 +55,17 @@
     }
 }
 
+%Seitenzahlen
+\pagenumbering{roman}
+\setcounter{page}{4}
+
+%Damit Quellen im Quellenverzeichnis nicht zu lang werden
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 %Quellen
 \newpage
 \clearpage
-\quellenverzeichnis
+\quellenverzeichnis{}
 
 \end{document}

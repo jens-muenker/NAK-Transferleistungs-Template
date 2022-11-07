@@ -11,8 +11,8 @@
 
 \ProcessOptions
 
-\LoadClass[a4paper,oneside,12pt, enabledeprecatedfontcommands, bibliography=totocnumbered]{scrartcl}
 %times in 12 pt
+\LoadClass[a4paper,oneside,12pt, enabledeprecatedfontcommands, bibliography=totocnumbered]{scrartcl}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 
@@ -27,12 +27,12 @@
 \RequirePackage[margin=2cm, includefoot, heightrounded]{geometry}
 \RequirePackage{microtype}
 
+%Zitieren
 \usepackage{csquotes, url}
-\usepackage[backend=biber,
-            citestyle=verbose-ibid,
-            urldate=short,
-            style=apa]{biblatex}
+\usepackage[backend=biber,citestyle=verbose-ibid,urldate=short,style=apa]{biblatex}
+
 \RequirePackage[table]{xcolor}
+
 %Language
 \RequirePackage[english,ngerman,german]{babel}
 \iflnienglish\selectlanguage{english}\def\bbl@main@language{english}\fi
@@ -62,7 +62,10 @@
 \RequirePackage{color}
 
 %Mehrfach Footnote
-\RequirePackage[multiple]{footmisc}
+\RequirePackage[symbol]{footmisc}
+
+%Auf Kapitel im Text verweisen
+\usepackage{cleveref}
 
 %Abkürzungen
 \RequirePackage{acronym}
@@ -96,14 +99,15 @@
 %Pagestyles
 \RequirePackage{floatpag}
 
+%Commands
 \newcommand{\needCite}[1][]{
     \@latex@warning{Still require cite: #1! Needs to be done}
-    \colorbox{yellow}{\textcolor{red}{Cite Notwendig #1}}%
+    \colorbox{yellow}{\textcolor{red}{Cite Notwendig #1}}
 }
 
 \newcommand{\todo}[1]{
-    \textcolor{red}{TODO: #1}%
-    \@latex@warning{TODO: #1! Needs to be done}%
+    \textcolor{red}{TODO: #1}
+    \@latex@warning{TODO: #1! Needs to be done}
 }
 
 \newcommand{\anf}[1]{\glqq #1\grqq{}}
@@ -112,7 +116,7 @@
 \newcommand{\fullref}[1]{\ref{#1} \anf{\nameref{#1}}}
 
 %Verbesserte Fussnote
-\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em\@makefnmark#1}
+\renewcommand\@makefntext[1]{\leftskip=0.5em\hskip-0.45em\@makefnmark#1}
 
 %Programmcode verwenden
 \RequirePackage{minted}
@@ -123,6 +127,11 @@
 \RequirePackage{float}
 
 \usepackage{verbatim} 
+
+% Für Tabellen mit Fußnoten
+\usepackage{threeparttable}
+
+\usepackage{setspace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Konfiguration der Codestyles%
@@ -201,6 +210,8 @@
 \newcommand*{\listingautorefname}{\listingscaption}
 
 %%%%%%%%%%%%%%%%%%%% LISTS %%%%%%%%%%%%%%%%%%%%
+
+%Inhaltsverzeichnis
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
 	\hypertarget{toc}
@@ -208,6 +219,7 @@
 	\tableofcontents
 }
 
+%Abbildungsverzeichnis
 \newcommand{\abbildungsverzeichnis}{
 	\newpage
 	\phantomsection
@@ -215,12 +227,14 @@
 	\listoffigures
 }
 
+%Tabellenverzeichnis
 \newcommand{\tabellenverzeichnis}{
 	\phantomsection
 	\addcontentsline{toc}{section}{\footnotesize{Tabellenverzeichnis}}
 	\listoftables
 }
 
+%Abkürzungsverzeichnis
 \newcommand{\abkuerzungsverzeichnis}{
 	\phantomsection
 	\section*{Abkürzungsverzeichnis}
@@ -230,6 +244,7 @@
 	\end{center}
 }
 
+% Quellcodeverzeichnis
 \newcommand{\listingverzeichnis}{
 	\phantomsection
 	\addcontentsline{toc}{section}{\footnotesize{Quellcodeverzeichnis}}
@@ -238,11 +253,13 @@
 \renewcommand\listingscaption{Quellcodeverzeichnis}
 \renewcommand\listoflistingscaption{Quellcodeverzeichnis}
 
+%Quellenverzeichnis
 \newcommand{\quellenverzeichnis}{
 	\newpage	
 	\phantomsection
-	\addcontentsline{toc}{section}{\footnotesize{Literatur}}
-	\printbibliography
+    \section*{Quellenverzeichnis}
+	\addcontentsline{toc}{section}{\footnotesize{Quellenverzeichnis}}
+	\printbibliography[heading=none]
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
