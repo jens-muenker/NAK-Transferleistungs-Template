@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dokumentenklasse für Transferleistungen
-% erstellt am 5.01.2021
-% Version: v2
+% erstellt am 01.12.2022
+% Version: v1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ProvidesClass{common/nak}[2020/06/29 v1, by Joshua Moeckelmann]
+\ProvidesClass{common/nak}[2022/12/01 v1, by Jens Muenker]
 
 \newif\iflnienglish\lnienglishfalse
 \DeclareOption{english}{\lnienglishtrue}
