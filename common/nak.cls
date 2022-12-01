@@ -11,95 +11,110 @@
 
 \ProcessOptions
 
-%times in 12 pt
-\LoadClass[a4paper,oneside,12pt, enabledeprecatedfontcommands, bibliography=totocnumbered]{scrartcl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seiteneinstellungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\LoadClass[a4paper,oneside,12pt, enabledeprecatedfontcommands, bibliography=totocnumbered]{scrartcl} % Schriftgröße 12pt
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
+\RequirePackage[T1]{fontenc} % Times Schrift
 
 \RequirePackage{textalpha} % Griechische Schriftzeichen
 \RequirePackage{lmodern} % Gerenderte Schrift
 \RequirePackage{eurosym} % Euro Symbol
 
-%Zeilenabstrand 1.25
 \RequirePackage{setspace}
-\setstretch{1.25}
-%Seitenabstand
-\RequirePackage[margin=2cm, includefoot, heightrounded]{geometry}
+\setstretch{1.25} %Zeilenabstrand 1.25
+
+\RequirePackage[margin=2cm, includefoot, heightrounded]{geometry} % Seitenrand 2cm
 \RequirePackage{microtype}
 
-%Zitieren
-\usepackage{csquotes, url}
-\usepackage[backend=biber,citestyle=verbose-ibid,urldate=short,style=apa]{biblatex}
-
-\RequirePackage[table]{xcolor}
-
-%Language
+% Sprache einstellen (Schriftzeichen)
 \RequirePackage[english,ngerman,german]{babel}
 \iflnienglish\selectlanguage{english}\def\bbl@main@language{english}\fi
 
-%Url-Config
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Zitieren mit biber & biblatex
+\usepackage{csquotes, url}
+\usepackage[backend=biber,citestyle=verbose-ibid,urldate=short,style=apa]{biblatex} % APA-Zitierstil
+
+% Webeseiten-Url-Config
 \PassOptionsToPackage{hyphens}{url}
 \RequirePackage[hyperfootnotes=false]{hyperref}
 
-%Tikz-Import
+% Tikz-Import
 \RequirePackage{tikz}
 \usetikzlibrary{fadings}
 
-%Math
+% Für Matheformeln etc.
 \RequirePackage{mathptmx}
 
 %Graphicx
 \RequirePackage{graphicx}
 
-%Bild unterschriften
+% Bildunterschriften
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 
-%Listen
+% Listen
 \RequirePackage{listings}
 
-%Bunter Code (z.B.)
+% Für Farben
 \RequirePackage{color}
 
-%Mehrfach Footnote
+% Mehrfach Footnote
 \RequirePackage[symbol]{footmisc}
 
-%Auf Kapitel im Text verweisen
+% Auf Kapitel im Text verweisen
 \usepackage{cleveref}
 
-%Abkürzungen
+% Abkürzungen
 \RequirePackage{acronym}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tabelleneinstellungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%% TABLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[table]{xcolor} % Farben in Tabellen
 \RequirePackage{array} % m und b tabellenausrichtungen
 \RequirePackage{longtable} % Tabellen über mehrere Spalten
 \RequirePackage{booktabs} % Bessere Tabellen
 \RequirePackage{multirow} % Tabellen mit multirow Zellen
 \renewcommand{\arraystretch}{1.5} % Tabellen: Zeilenabstand
 \setlength{\tabcolsep}{12pt} % Tabellen: Spaltenabstand
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{threeparttable} % Für Tabellen mit Fußnoten
 
-%Figuren im Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Figuren im Text
 \RequirePackage{wrapfig}
 
-%pdf im text
+% PDFs im Text verwenden/importieren können
 \RequirePackage{pdfpages}
 \RequirePackage[export]{adjustbox}
 
-%Nordakademie Head
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nordakademie Header für die Seiten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \RequirePackage{fancyhdr}
-\addtolength{\headheight}{0.9cm}
+\addtolength{\headheight}{0.9cm} % Headerhöhe
 \pagestyle{fancyplain}
-\fancyhead[R]{\includegraphics[height=0.8cm]{images/Nordakademie_Logo.png}}
-\fancyhead[L]{\includegraphics[height=0.9cm]{images/transferleistung.png}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{images/Nordakademie_Logo.png}} % Logo rechts
+\fancyhead[L]{\includegraphics[height=0.9cm]{images/transferleistung.png}} % Logo links
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
 
-%Pagestyles
+% Pagestyles
 \RequirePackage{floatpag}
 
-%Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hilfreiche Befehle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\needCite}[1][]{
     \@latex@warning{Still require cite: #1! Needs to be done}
     \colorbox{yellow}{\textcolor{red}{Cite Notwendig #1}}
@@ -115,31 +130,30 @@
 
 \newcommand{\fullref}[1]{\ref{#1} \anf{\nameref{#1}}}
 
-%Verbesserte Fussnote
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Verbesserte Fussnote
 \renewcommand\@makefntext[1]{\leftskip=0.5em\hskip-0.45em\@makefnmark#1}
-
-%Programmcode verwenden
-\RequirePackage{minted}
-
-%Zitate
-\RequirePackage{csquotes}
 
 \RequirePackage{float}
 
+% Auskommentieren von LaTex-Elementen und längeren Text-Blöcken
 \usepackage{verbatim} 
 
-% Für Tabellen mit Fußnoten
-\usepackage{threeparttable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programmcode verwenden
+%
+% WICHTIG:
+%
+% Python 3 & das Python-Package
+% python-pygments muss installiert sein!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{minted}
 
-\usepackage{setspace}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Konfiguration der Codestyles%
-%   kann erweitert werden    %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Konfiguration der Codestyles
 
 \begin{comment}
-\setminted[js]{ %
+\setminted[js]{ 
     linenos=true,             % Line numbers
     autogobble=true,          % Automatically remove common white space
     frame=lines,
@@ -147,7 +161,7 @@
     fontsize=\footnotesize
 }
 
-\setminted[abap]{ %
+\setminted[abap]{ 
     linenos=true,             % Line numbers
     autogobble=true,          % Automatically remove common white space
     frame=lines,
@@ -155,7 +169,7 @@
     fontsize=\footnotesize
 }
 
-\setminted[xml]{ %
+\setminted[xml]{ 
     linenos=true,             % Line numbers
     autogobble=true,          % Automatically remove common white space
     frame=lines,
@@ -163,7 +177,7 @@
     fontsize=\footnotesize
 }
 
-\setminted[json]{ %
+\setminted[json]{ 
     linenos=true,             % Line numbers
     autogobble=true,          % Automatically remove common white space
     frame=lines,
@@ -171,7 +185,7 @@
     fontsize=\footnotesize
 }
 
-\setminted[java]{ %
+\setminted[java]{ 
     linenos=true,             % Line numbers
     autogobble=true,          % Automatically remove common white space
     frame=lines,
@@ -182,18 +196,18 @@
 
 \makeatletter
 \newenvironment{codeBlock}[3]
- {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
-  \def\FV@BProcessLine##1{%
-    \hbox{%
-      \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}%
-      \FancyVerbFormatLine{##1}%
-    }%
-  }%
+ {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
+  \def\FV@BProcessLine##1{
+    \hbox{
+      \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}
+      \FancyVerbFormatLine{##1}
+    }
+  }
   \VerbatimEnvironment
-  \begin{listing}[H]%
-  \centering%
-  \caption{#2}%
-  \label{#3}%
+  \begin{listing}[H]
+  \centering
+  \caption{#2}
+  \label{#3}
   \setbox\z@=\hbox\bgroup
   \begin{minted}[samepage]{#1}}
  {\end{minted}\egroup
@@ -205,13 +219,17 @@
 \usemintedstyle{lovelace}
 \usemintedstyle[abap]{abap}
 
-%\renewcommand\listingscaption{Codebeispiel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verzeichniseinstellungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand*{\listingautorefname}{\listingscaption}
 
-%%%%%%%%%%%%%%%%%%%% LISTS %%%%%%%%%%%%%%%%%%%%
-
-%Inhaltsverzeichnis
+% Inhaltsverzeichnis
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
 	\hypertarget{toc}
@@ -219,7 +237,7 @@
 	\tableofcontents
 }
 
-%Abbildungsverzeichnis
+%A bbildungsverzeichnis
 \newcommand{\abbildungsverzeichnis}{
 	\newpage
 	\phantomsection
@@ -227,14 +245,14 @@
 	\listoffigures
 }
 
-%Tabellenverzeichnis
+% Tabellenverzeichnis
 \newcommand{\tabellenverzeichnis}{
 	\phantomsection
 	\addcontentsline{toc}{section}{\footnotesize{Tabellenverzeichnis}}
 	\listoftables
 }
 
-%Abkürzungsverzeichnis
+% Abkürzungsverzeichnis
 \newcommand{\abkuerzungsverzeichnis}{
 	\phantomsection
 	\section*{Abkürzungsverzeichnis}
@@ -253,7 +271,7 @@
 \renewcommand\listingscaption{Quellcodeverzeichnis}
 \renewcommand\listoflistingscaption{Quellcodeverzeichnis}
 
-%Quellenverzeichnis
+% Quellenverzeichnis
 \newcommand{\quellenverzeichnis}{
 	\newpage	
 	\phantomsection
@@ -262,4 +280,4 @@
 	\printbibliography[heading=none]
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
