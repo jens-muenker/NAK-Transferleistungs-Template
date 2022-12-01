@@ -241,7 +241,7 @@
 	\tableofcontents
 }
 
-%A bbildungsverzeichnis
+% Abbildungsverzeichnis
 \newcommand{\abbildungsverzeichnis}{
 	\newpage
 	\phantomsection
