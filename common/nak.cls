@@ -29,6 +29,8 @@
 \RequirePackage[margin=2cm, includefoot, heightrounded]{geometry} % Seitenrand 2cm
 \RequirePackage{microtype}
 
+\RequirePackage[table]{xcolor} % Farben in Tabellen
+
 % Sprache einstellen (Schriftzeichen)
 \RequirePackage[english,ngerman,german]{babel}
 \iflnienglish\selectlanguage{english}\def\bbl@main@language{english}\fi
@@ -76,7 +78,6 @@
 % Tabelleneinstellungen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[table]{xcolor} % Farben in Tabellen
 \RequirePackage{array} % m und b tabellenausrichtungen
 \RequirePackage{longtable} % Tabellen über mehrere Spalten
 \RequirePackage{booktabs} % Bessere Tabellen
