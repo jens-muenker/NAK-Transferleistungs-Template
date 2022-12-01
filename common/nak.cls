@@ -147,12 +147,14 @@
 %
 % Python 3 & das Python-Package
 % python-pygments muss installiert sein!!
+% Anschließend begin & end comment
+% rausnehmen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{minted}
 
 %Konfiguration der Codestyles
 
-\begin{comment}
+\begin{comment} % Entfernen, wenn Code genutzt werden soll
 \setminted[js]{ 
     linenos=true,             % Line numbers
     autogobble=true,          % Automatically remove common white space
@@ -192,7 +194,6 @@
     framesep=2mm,
     fontsize=\footnotesize
 }
-\end{comment}
 
 \makeatletter
 \newenvironment{codeBlock}[3]
@@ -218,6 +219,8 @@
 
 \usemintedstyle{lovelace}
 \usemintedstyle[abap]{abap}
+
+\end{comment} % Entfernen, wenn Code genutzt werden soll
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
