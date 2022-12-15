@@ -118,7 +118,7 @@
 
 \newcommand{\needCite}[1][]{
     \@latex@warning{Still require cite: #1! Needs to be done}
-    \colorbox{yellow}{\textcolor{red}{Cite Notwendig #1}}
+    \colorbox{yellow}{\textcolor{red}{Zitat Notwendig #1}}
 }
 
 \newcommand{\todo}[1]{
