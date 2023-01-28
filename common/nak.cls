@@ -148,80 +148,75 @@
 %
 % Python 3 & das Python-Package
 % python-pygments muss installiert sein!!
-% Anschließend begin & end comment
-% rausnehmen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{minted}
+%\RequirePackage{minted}
 
 %Konfiguration der Codestyles
 
-\begin{comment} % Entfernen, wenn Code genutzt werden soll
-\setminted[js]{ 
-    linenos=true,             % Line numbers
-    autogobble=true,          % Automatically remove common white space
-    frame=lines,
-    framesep=2mm,
-    fontsize=\footnotesize
-}
+%\setminted[js]{ 
+%    linenos=true,             % Line numbers
+%    autogobble=true,          % Automatically remove common white space
+%    frame=lines,
+%    framesep=2mm,
+%    fontsize=\footnotesize
+%}
 
-\setminted[abap]{ 
-    linenos=true,             % Line numbers
-    autogobble=true,          % Automatically remove common white space
-    frame=lines,
-    framesep=2mm,
-    fontsize=\footnotesize
-}
+%\setminted[abap]{ 
+%    linenos=true,             % Line numbers
+%    autogobble=true,          % Automatically remove common white space
+%    frame=lines,
+%    framesep=2mm,
+%    fontsize=\footnotesize
+%}
 
-\setminted[xml]{ 
-    linenos=true,             % Line numbers
-    autogobble=true,          % Automatically remove common white space
-    frame=lines,
-    framesep=2mm,
-    fontsize=\footnotesize
-}
+%\setminted[xml]{ 
+%    linenos=true,             % Line numbers
+%    autogobble=true,          % Automatically remove common white space
+%    frame=lines,
+%    framesep=2mm,
+%    fontsize=\footnotesize
+%}
 
-\setminted[json]{ 
-    linenos=true,             % Line numbers
-    autogobble=true,          % Automatically remove common white space
-    frame=lines,
-    framesep=2mm,
-    fontsize=\footnotesize
-}
+%\setminted[json]{ 
+%    linenos=true,             % Line numbers
+%    autogobble=true,          % Automatically remove common white space
+%    frame=lines,
+%    framesep=2mm,
+%    fontsize=\footnotesize
+%}
 
-\setminted[java]{ 
-    linenos=true,             % Line numbers
-    autogobble=true,          % Automatically remove common white space
-    frame=lines,
-    framesep=2mm,
-    fontsize=\footnotesize
-}
+%\setminted[java]{ 
+%    linenos=true,             % Line numbers
+%    autogobble=true,          % Automatically remove common white space
+%    frame=lines,
+%    framesep=2mm,
+%    fontsize=\footnotesize
+%}
 
-\makeatletter
-\newenvironment{codeBlock}[3]
- {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
-  \def\FV@BProcessLine##1{
-    \hbox{
-      \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}
-      \FancyVerbFormatLine{##1}
-    }
-  }
-  \VerbatimEnvironment
-  \begin{listing}[H]
-  \centering
-  \caption{#2}
-  \label{#3}
-  \setbox\z@=\hbox\bgroup
-  \begin{minted}[samepage]{#1}}
- {\end{minted}\egroup
-  \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}
-  \end{listing}\noindent
- }
-\makeatother
+%\makeatletter
+%\newenvironment{codeBlock}[3]S
+% {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
+%  \def\FV@BProcessLine##1{
+%    \hbox{
+%      \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}
+%      \FancyVerbFormatLine{##1}
+%    }
+%  }
+%  \VerbatimEnvironment
+%  \begin{listing}[H]
+%  \centering
+%  \caption{#2}
+%  \label{#3}
+%  \setbox\z@=\hbox\bgroup
+%  \begin{minted}[samepage]{#1}}
+% {\end{minted}\egroup
+%  \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}
+%  \end{listing}\noindent
+% }
+%\makeatother
 
-\usemintedstyle{lovelace}
-\usemintedstyle[abap]{abap}
-
-\end{comment} % Entfernen, wenn Code genutzt werden soll
+%\usemintedstyle{lovelace}
+%\usemintedstyle[abap]{abap}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -267,13 +262,13 @@
 }
 
 % Quellcodeverzeichnis
-\newcommand{\listingverzeichnis}{
-	\phantomsection
-	\addcontentsline{toc}{section}{\footnotesize{Quellcodeverzeichnis}}
-	\listoflistings
-}
-\renewcommand\listingscaption{Quellcodeverzeichnis}
-\renewcommand\listoflistingscaption{Quellcodeverzeichnis}
+%\newcommand{\listingverzeichnis}{
+%	\phantomsection
+%	\addcontentsline{toc}{section}{\footnotesize{Quellcodeverzeichnis}}
+%	\listoflistings
+%}
+%\renewcommand\listingscaption{Quellcodeverzeichnis}
+%\renewcommand\listoflistingscaption{Quellcodeverzeichnis}
 
 % Quellenverzeichnis
 \newcommand{\quellenverzeichnis}{
