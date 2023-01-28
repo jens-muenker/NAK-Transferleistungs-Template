@@ -3,7 +3,7 @@ Dies ist meine private LaTeX-Vorlage für Transferleistungen an der Nordakademie
 
 Genauere Erklärungen sind innerhalb der Tex-Dateien und in dem Main-PDF zu finden.
 
-# NAK-Transferleistungs-Template
+# Quellcodeverzeichnis & Quellcodeüberprüfung mit minted (optional)
 Dieses Template kann auch ein Quellcodeverzeichnis erstellen sowie eine Quellcodeüberprüfung durchführen. Hierfür wird das Paket minted verwendet. Um dies nutzen zu können, müssen in der nak.cls sowie in der main.tex die entsprechend auskommentierten Zeilen verwendet werden.
 
 # Templateinspiration & Dankeschön
