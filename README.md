@@ -29,7 +29,7 @@ Dieses Template verwendet verschiedene LaTeX-Pakete, um das Erstellen von Transf
 - [`threeparttable`](https://ctan.org/pkg/threeparttable): Für Tabellen mit Fußnoten
 - Weitere Pakete für Tabellen, Schriftarten und mehr
 
-## (Optional) Nutzung von minted für Code
+## Nutzung von minted für Code (optional)
 
 Diese Vorlage bietet die Möglichkeit, Quellcode mit dem [`minted`-Paket](https://www.ctan.org/pkg/minted) einzufügen und zu formatieren. `minted` ist ein mächtiges Paket, das Syntax-Hervorhebung für verschiedene Programmiersprachen bietet. Um diese Funktion zu nutzen:
 
