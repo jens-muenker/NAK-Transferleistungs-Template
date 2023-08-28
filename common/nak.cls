@@ -35,6 +35,13 @@
 \RequirePackage[english,ngerman,german]{babel}
 \iflnienglish\selectlanguage{english}\def\bbl@main@language{english}\fi
 
+\usepackage{amsmath}
+
+\usepackage[inline]{enumitem}
+\setlist[itemize]{itemjoin=\hspace*{\fill},itemjoin*=\hspace*{\fill}} 
+
+\usepackage{boldline,multirow}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Zitieren mit biber & biblatex
