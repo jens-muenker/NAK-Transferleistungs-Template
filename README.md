@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Stand-August_2023-green)
+![](https://img.shields.io/badge/Stand-Juli_2024-green)
 
 # NAK-Transferleistungs-Template
 
