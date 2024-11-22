@@ -2,7 +2,7 @@
 
 # NAK-Transferleistungs-Template
 
-Dies ist eine LaTeX-Vorlage und Dokumentenklasse für Transferleistungen an der [Nordakademie](https://www.nordakademie.de). Mit dieser Vorlage kannst du Transferleistungen in einem strukturierten und ansprechenden Format erstellen. Sie enthält vorgefertigte Abschnitte, Stile und Funktionen, die den Anforderungen der Nordakademie entsprechen (**Stand: August 2023**).
+Dies ist eine LaTeX-Vorlage und Dokumentenklasse für Transferleistungen an der [Nordakademie](https://www.nordakademie.de). Mit dieser Vorlage kannst du Transferleistungen in einem strukturierten und ansprechenden Format erstellen. Sie enthält vorgefertigte Abschnitte, Stile und Funktionen, die den Anforderungen der Nordakademie entsprechen (**Stand: Juli 2024**).
 
 ## Verwendung der Vorlage
 
