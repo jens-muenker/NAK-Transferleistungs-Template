@@ -1,8 +1,8 @@
-![](https://img.shields.io/badge/Stand-Juli_2024-green)
+![](https://img.shields.io/badge/Stand-Dezember_2024-green)
 
 # NAK-Transferleistungs-Template
 
-Dies ist eine LaTeX-Vorlage und Dokumentenklasse für Transferleistungen an der [Nordakademie](https://www.nordakademie.de). Mit dieser Vorlage kannst du Transferleistungen in einem strukturierten und ansprechenden Format erstellen. Sie enthält vorgefertigte Abschnitte, Stile und Funktionen, die den Anforderungen der Nordakademie entsprechen (**Stand: Juli 2024**).
+Dies ist eine LaTeX-Vorlage und Dokumentenklasse für Transferleistungen an der [Nordakademie](https://www.nordakademie.de). Mit dieser Vorlage kannst du Transferleistungen in einem strukturierten und ansprechenden Format erstellen. Sie enthält vorgefertigte Abschnitte, Stile und Funktionen, die den Anforderungen der Nordakademie entsprechen (**Stand: Dezember 2024**).
 
 ## Verwendung der Vorlage
 
